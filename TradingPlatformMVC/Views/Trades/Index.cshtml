@@ -1,0 +1,65 @@
+﻿@model IEnumerable<TradingPlatformMVC.Models.trade>
+
+@{
+    ViewBag.Title = "Trades";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.ActionLink("Share ID", "Index", new { sortBy = ViewBag.SortingShareIdPar, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+        </th>
+        <th>
+            @Html.ActionLink("Broker ID", "Index", new { sortBy = ViewBag.SortingBrokerIdPar, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+        </th>
+        <th>
+            @Html.ActionLink("Stock Ex ID", "Index", new { sortBy = ViewBag.SortingStockExIdPar, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+        </th>
+        <th>
+            @Html.ActionLink("Transaction Time", "Index", new { sortBy = ViewBag.SortingTransactionTimePar, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+        </th>
+        <th>
+            @Html.ActionLink("Share Amount", "Index", new { sortBy = ViewBag.SortingShareAmountPar, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+        </th>
+        <th>
+            @Html.ActionLink("Price Total", "Index", new { sortBy = ViewBag.SortingPriceTotalPar, searchBy = Request.QueryString["searchBy"], search = Request.QueryString["search"] })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.share_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.broker_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stock_ex_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transaction_time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.share_amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price_total)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.trade_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.trade_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.trade_id })
+        </td>
+    </tr>
+}
+
+</table>
+

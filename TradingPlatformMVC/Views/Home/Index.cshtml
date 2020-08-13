@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link rel="stylesheet" href="~/Content/StyleHome.css" />
+
+<body>
+
+    <div class="jumbotron">
+        <h1>Welcome to the Trading Platform</h1>
+    </div>
+
+    <input type="button" value="Brokers" onclick="location.href='@Url.Action("Index", "Broker")'" />
+    <input type="button" value="Places" onclick="location.href='@Url.Action("Index", "Place")'" />
+    <input type="button" value="Currencies" onclick="location.href='@Url.Action("Index", "Currency")'" />
+    <input type="button" value="Stock Exchange" onclick="location.href='@Url.Action("Index", "StockExchange")'" />
+    <input type="button" value="Trades" onclick="location.href='@Url.Action("Index", "Trades")'" />
+    <input type="button" value="Companies" onclick="location.href='@Url.Action("Index", "Company")'" />
+
+</body>

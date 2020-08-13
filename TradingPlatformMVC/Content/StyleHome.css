@@ -1,0 +1,7 @@
+﻿body {
+    background-image: url('Images/tradingplatform.png');
+}
+
+input[type=button] {
+    background-color: yellow;
+}

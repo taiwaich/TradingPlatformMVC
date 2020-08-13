@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TradingPlatformMVC.Models.stock_exchanges>
+
+@{
+    ViewBag.Title = "Stock Exchanges";
+}
+
+    <h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Symbol
+        </th>
+        <th>
+            Place ID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.symbol)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.place_id)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.stock_ex_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.stock_ex_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.stock_ex_id })
+        </td>
+    </tr>
+}
+
+</table>
